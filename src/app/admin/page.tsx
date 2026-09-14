@@ -20,7 +20,7 @@ export default async function AdminDashboard() {
 
   if (profile?.role !== 'ADMIN') {
     return (
-      <div className="p-8 text-center text-[var(--color-error)]">
+      <div className="p-8 text-center text-error">
         <h1 className="text-2xl font-bold">Unauthorized</h1>
         <p>You do not have permission to view this page.</p>
       </div>
@@ -42,28 +42,28 @@ export default async function AdminDashboard() {
     .limit(20)
 
   return (
-    <div className="max-w-6xl mx-auto py-8">
-      <h1 className="text-3xl font-bold text-[var(--color-on-surface)] mb-8">Admin Dashboard</h1>
+    <div className="max-w-6xl mx-auto py-space-xl">
+      <h1 className="text-3xl font-bold text-on-surface mb-space-xl">Admin Dashboard</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-space-xl">
         
         {/* Content Moderation */}
-        <div className="bg-[var(--color-surface-container-low)] p-6 rounded-lg border border-[var(--color-outline-variant)]">
-          <h2 className="text-xl font-bold text-[var(--color-on-surface)] mb-4">Recent Questions</h2>
+        <div className="bg-surface-container-low p-space-xl rounded-lg border border-outline-variant">
+          <h2 className="text-xl font-bold text-on-surface mb-4">Recent Questions</h2>
           <div className="space-y-4">
             {questions?.map((q: any) => (
-              <div key={q.id} className="flex justify-between items-center p-3 bg-[var(--color-surface)] border border-[var(--color-outline-variant)] rounded">
+              <div key={q.id} className="flex justify-between items-center p-3 bg-surface border border-outline-variant rounded">
                 <div className="min-w-0 pr-4">
-                  <a href={`/questions/${q.id}`} className="font-semibold text-sm truncate text-[var(--color-on-surface)] hover:text-[var(--color-primary)] hover:underline block">
+                  <a href={`/questions/${q.id}`} className="font-semibold text-sm truncate text-on-surface hover:text-primary hover:underline block">
                     {q.title}
                   </a>
-                  <p className="text-xs text-[var(--color-on-surface-variant)]">by @{q.profiles?.username} - {formatDistanceToNow(new Date(q.created_at))} ago</p>
+                  <p className="text-xs text-on-surface-variant">by @{q.profiles?.username} - {formatDistanceToNow(new Date(q.created_at))} ago</p>
                 </div>
                 <form action={async () => {
                   'use server'
                   await deleteQuestion(q.id)
                 }}>
-                  <button className="px-3 py-1 bg-[var(--color-error)] text-white text-xs font-medium rounded hover:opacity-90">
+                  <button className="px-3 py-1 bg-error text-white text-xs font-medium rounded hover:opacity-90">
                     Delete
                   </button>
                 </form>
@@ -74,21 +74,21 @@ export default async function AdminDashboard() {
 
         <div className="space-y-8">
           {/* User Management */}
-          <div className="bg-[var(--color-surface-container-low)] p-6 rounded-lg border border-[var(--color-outline-variant)]">
-            <h2 className="text-xl font-bold text-[var(--color-on-surface)] mb-4">User Management</h2>
+          <div className="bg-surface-container-low p-space-xl rounded-lg border border-outline-variant">
+            <h2 className="text-xl font-bold text-on-surface mb-4">User Management</h2>
             <div className="space-y-4">
               {users?.map((u: any) => (
-                <div key={u.id} className="flex justify-between items-center p-3 bg-[var(--color-surface)] border border-[var(--color-outline-variant)] rounded">
+                <div key={u.id} className="flex justify-between items-center p-3 bg-surface border border-outline-variant rounded">
                   <div>
-                    <p className="font-semibold text-sm text-[var(--color-on-surface)]">@{u.username}</p>
-                    <p className="text-xs text-[var(--color-on-surface-variant)]">Role: {u.role}</p>
+                    <p className="font-semibold text-sm text-on-surface">@{u.username}</p>
+                    <p className="text-xs text-on-surface-variant">Role: {u.role}</p>
                   </div>
                   {u.role !== 'ADMIN' && (
                     <form action={async () => {
                       'use server'
                       await toggleBanUser(u.id, u.is_banned)
                     }}>
-                      <button className={`px-3 py-1 text-xs font-medium rounded ${u.is_banned ? 'bg-[var(--color-surface-dim)] text-[var(--color-on-surface)]' : 'bg-[var(--color-error)] text-white'} hover:opacity-90`}>
+                      <button className={`px-3 py-1 text-xs font-medium rounded ${u.is_banned ? 'bg-surface-dim text-on-surface' : 'bg-error text-white'} hover:opacity-90`}>
                         {u.is_banned ? 'Unban' : 'Ban'}
                       </button>
                     </form>
@@ -99,8 +99,8 @@ export default async function AdminDashboard() {
           </div>
 
           {/* Announcements */}
-          <div className="bg-[var(--color-surface-container-low)] p-6 rounded-lg border border-[var(--color-outline-variant)]">
-            <h2 className="text-xl font-bold text-[var(--color-on-surface)] mb-4">Send Announcement</h2>
+          <div className="bg-surface-container-low p-space-xl rounded-lg border border-outline-variant">
+            <h2 className="text-xl font-bold text-on-surface mb-4">Send Announcement</h2>
             <form action={async (formData) => {
               'use server'
               const title = formData.get('title') as string
@@ -111,16 +111,16 @@ export default async function AdminDashboard() {
                 name="title"
                 placeholder="Announcement Title"
                 required
-                className="w-full text-sm bg-[var(--color-surface)] border border-[var(--color-outline-variant)] rounded px-3 py-2 focus:border-[var(--color-primary)] focus:outline-none text-[var(--color-on-surface)]"
+                className="w-full text-sm bg-surface border border-outline-variant rounded px-3 py-2 focus:border-primary focus:outline-none text-on-surface"
               />
               <textarea
                 name="content"
                 placeholder="Message..."
                 required
                 rows={3}
-                className="w-full text-sm bg-[var(--color-surface)] border border-[var(--color-outline-variant)] rounded px-3 py-2 focus:border-[var(--color-primary)] focus:outline-none text-[var(--color-on-surface)]"
+                className="w-full text-sm bg-surface border border-outline-variant rounded px-3 py-2 focus:border-primary focus:outline-none text-on-surface"
               />
-              <button className="px-4 py-2 bg-[var(--color-primary)] text-white text-sm font-medium rounded hover:bg-[var(--color-primary-container)]">
+              <button className="px-4 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-primary-container">
                 Publish
               </button>
             </form>

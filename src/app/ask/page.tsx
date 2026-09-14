@@ -31,39 +31,39 @@ export default function AskQuestionPage() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-space-lg bg-[var(--color-surface-container-low)] p-space-xl rounded-lg">
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-space-lg bg-surface-container-low p-space-xl rounded-lg">
       <div>
-        <h1 className="font-headline-lg text-headline-lg font-bold text-[var(--color-on-surface)]">Ask a public question</h1>
-        <p className="mt-2 text-[var(--color-on-surface-variant)]">Be specific and imagine you're asking a question to another person.</p>
+        <h1 className="font-headline-lg text-headline-lg font-bold text-on-surface">Ask a public question</h1>
+        <p className="mt-2 text-on-surface-variant">Be specific and imagine you're asking a question to another person.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-space-lg">
         <div className="flex flex-col gap-space-xs">
-          <label className="font-medium text-[var(--color-on-surface)]">Title</label>
+          <label className="font-medium text-on-surface">Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="px-space-md py-2 bg-[var(--color-surface-container)] border border-[var(--color-outline)] rounded-md text-[var(--color-on-surface)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+            className="px-space-md py-2 bg-surface-container border border-outline rounded-md text-on-surface focus:border-primary focus:outline-none transition-colors"
             placeholder="e.g. Is there an R object oriented programming guide?"
             required
           />
         </div>
 
         <div className="flex flex-col gap-space-xs">
-          <label className="font-medium text-[var(--color-on-surface)]">Body</label>
-          <div className="bg-[var(--color-surface-container)] border border-[var(--color-outline)] rounded-md overflow-hidden focus-within:border-[var(--color-primary)] transition-colors text-[var(--color-on-surface)]">
+          <label className="font-medium text-on-surface">Body</label>
+          <div className="bg-surface-container border border-outline rounded-md overflow-hidden focus-within:border-primary transition-colors text-on-surface">
              <RichTextEditor value={description} onChange={setDescription} />
           </div>
         </div>
 
         <div className="flex flex-col gap-space-xs">
-          <label className="font-medium text-[var(--color-on-surface)]">Tags</label>
+          <label className="font-medium text-on-surface">Tags</label>
           <TagAutocomplete selectedTags={tags} onChange={setTags} />
         </div>
 
         {error && (
-          <div className="p-4 bg-[var(--color-error)]/10 text-[var(--color-error)] rounded-md text-sm font-medium">
+          <div className="p-4 bg-error/10 text-error rounded-md text-sm font-medium">
             {error}
           </div>
         )}
@@ -72,7 +72,7 @@ export default function AskQuestionPage() {
           <button 
             type="submit" 
             disabled={isSubmitting}
-            className="px-6 py-2.5 bg-[var(--color-primary)] text-white font-medium rounded-md hover:bg-[var(--color-primary-container)] transition-colors disabled:opacity-50"
+            className="px-6 py-2.5 bg-primary text-white font-medium rounded-md hover:bg-primary-container transition-colors disabled:opacity-50"
           >
             {isSubmitting ? 'Posting...' : 'Post Your Question'}
           </button>
