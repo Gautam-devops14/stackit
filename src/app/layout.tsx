@@ -42,7 +42,6 @@ export default async function RootLayout({
           <div className="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
             <div className="flex items-center gap-space-lg shrink-0">
               <a className="flex items-center gap-space-sm focus:outline-none" data-path="home" href="/">
-                <img alt="StackIt Logo" className="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/>
                 <span className="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">Stack<span className="text-primary-container">It</span></span>
               </a>
               <nav className="hidden md:flex items-center gap-space-xs">
@@ -74,7 +73,7 @@ export default async function RootLayout({
           </div>
         </header>
 
-        <main className="w-full pt-16 bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]">
+        <main className="w-full pt-24 pb-12 bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]">
           {children}
         </main>
         
@@ -82,7 +81,6 @@ export default async function RootLayout({
           <div className="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
               <div className="flex items-center gap-space-sm">
-                <img alt="StackIt Logo" className="h-6 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/>
                 <span className="font-headline-md text-headline-md font-semibold text-on-surface">StackIt</span>
                 <span className="text-body-sm font-body-sm">© 2026 StackIt Community.</span>
               </div>

@@ -55,7 +55,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col lg:flex-row gap-space-xl w-full">
-      <div className="flex-1 flex flex-col gap-space-lg">
+      <div className="flex-1 flex flex-col gap-space-md">
         
         {/* Header Area */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
@@ -71,7 +71,7 @@ export default async function Home() {
         <div className="flex flex-col gap-space-sm">
           {displayQuestions.map((q: any) => (
             <Link href={`/questions/${q.id}`} key={q.id} className="block group">
-              <article className="relative flex flex-col sm:flex-row items-start gap-space-md p-space-lg bg-surface-container-lowest rounded-xl hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all cursor-pointer border border-outline-variant/40 hover:border-outline-variant">
+              <article className="relative flex flex-col sm:flex-row items-start gap-space-md p-space-md bg-surface-container-lowest rounded-xl hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all cursor-pointer border border-outline-variant/40 hover:border-outline-variant">
                 
                 {/* Stats */}
                 <div className="flex sm:flex-col gap-space-sm min-w-[72px] shrink-0">
@@ -86,23 +86,25 @@ export default async function Home() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 min-w-0 flex flex-col gap-space-xs">
+                <div className="flex-1 min-w-0 flex flex-col justify-between">
                   <h3 className="text-lg font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2">
                     {q.title}
                   </h3>
                   
-                  <div className="flex items-center gap-space-sm mt-1 flex-wrap">
-                    {q.question_tags.map((qt: any) => (
-                      <span key={qt.tags.name} className="px-2 py-0.5 rounded bg-surface-dim text-primary text-xs font-mono transition-colors">
-                        #{qt.tags.name}
-                      </span>
-                    ))}
-                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mt-3">
+                    <div className="flex items-center gap-space-sm flex-wrap">
+                      {q.question_tags.map((qt: any) => (
+                        <span key={qt.tags.name} className="px-2 py-0.5 rounded bg-surface-dim text-primary text-xs font-mono transition-colors">
+                          #{qt.tags.name}
+                        </span>
+                      ))}
+                    </div>
 
-                  <div className="flex items-center justify-end gap-space-xs mt-2 text-xs text-on-surface-variant">
-                    <span>asked {formatDistanceToNow(new Date(q.created_at))} ago</span>
-                    <span>by</span>
-                    <span className="font-medium text-primary">@{q.profiles?.username}</span>
+                    <div className="flex items-center gap-space-xs text-xs text-on-surface-variant shrink-0">
+                      <span>asked {formatDistanceToNow(new Date(q.created_at))} ago</span>
+                      <span>by</span>
+                      <span className="font-medium text-primary">@{q.profiles?.username}</span>
+                    </div>
                   </div>
                 </div>
               </article>
