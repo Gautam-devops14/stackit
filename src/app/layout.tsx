@@ -26,6 +26,15 @@ export default async function RootLayout({
     .limit(1)
     .single()
 
+  let isAdmin = false
+  let username = ''
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) {
+    const { data: profile } = await supabase.from('profiles').select('username, role').eq('id', user.id).single()
+    isAdmin = profile?.role === 'ADMIN'
+    username = profile?.username
+  }
+
   return (
     <html lang="en">
       <head>
@@ -38,7 +47,7 @@ export default async function RootLayout({
             <strong>{latestAnnouncement.title}:</strong> {latestAnnouncement.content}
           </div>
         )}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <header className="sticky top-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
           <div className="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
             <div className="flex items-center gap-space-lg shrink-0">
               <a className="flex items-center gap-space-sm focus:outline-none" data-path="home" href="/">
@@ -46,7 +55,9 @@ export default async function RootLayout({
               </a>
               <nav className="hidden md:flex items-center gap-space-xs">
                 <a className="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" href="/">Home</a>
-                <a className="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" href="/admin">Admin Ops</a>
+                {isAdmin && (
+                  <a className="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" href="/admin">Admin Ops</a>
+                )}
               </nav>
             </div>
             
@@ -65,15 +76,17 @@ export default async function RootLayout({
               <NotificationBell />
 
               <div className="flex items-center gap-space-xs pl-space-xs">
-                <a className="flex items-center gap-space-xs p-0.5 rounded-full hover:ring-2 hover:ring-outline-variant focus:outline-none transition-all" href="/login">
-                  <div className="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-xs font-bold text-on-surface">U</div>
+                <a className="flex items-center gap-space-xs p-0.5 rounded-full hover:ring-2 hover:ring-outline-variant focus:outline-none transition-all" href={user ? `/users/${username}` : "/login"}>
+                  <div className="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-xs font-bold text-on-surface">
+                    {user ? username.charAt(0).toUpperCase() : 'U'}
+                  </div>
                 </a>
               </div>
             </div>
           </div>
         </header>
 
-        <main className="w-full pt-24 pb-12 bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]">
+        <main className="w-full py-space-xl bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]">
           {children}
         </main>
         

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-dim":"#d2d9f4","outline-variant":"#c3c6d7","primary-container":"#2563eb","error-container":"#ffdad6","secondary-container":"#645efb","on-primary":"#ffffff","on-surface":"#131b2e","surface-variant":"#dae2fd","primary":"#004ac6","on-tertiary":"#ffffff","secondary-fixed":"#e2dfff","on-primary-fixed":"#00174b","surface-container-high":"#e2e7ff","tertiary-container":"#007d55","secondary":"#4b41e1","outline":"#737686","surface-bright":"#faf8ff","on-primary-container":"#eeefff","on-tertiary-fixed":"#002113","surface-container-lowest":"#ffffff","on-tertiary-container":"#bdffdb","on-secondary-container":"#fffbff","error":"#ba1a1a","on-secondary-fixed":"#0f0069","surface-container-low":"#f2f3ff","on-secondary-fixed-variant":"#3323cc","surface-container":"#eaedff","secondary-fixed-dim":"#c3c0ff","on-background":"#131b2e","on-primary-fixed-variant":"#003ea8","primary-fixed-dim":"#b4c5ff","on-error-container":"#93000a","on-tertiary-fixed-variant":"#005236","tertiary-fixed":"#6ffbbe","on-surface-variant":"#434655","background":"#faf8ff","tertiary-fixed-dim":"#4edea3","surface-container-highest":"#dae2fd","inverse-primary":"#b4c5ff","inverse-on-surface":"#eef0ff","inverse-surface":"#283044","primary-fixed":"#dbe1ff","on-error":"#ffffff","surface-tint":"#0053db","tertiary":"#006242","surface":"#faf8ff","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-sm":"0.5rem","space-md":"1rem","margin-mobile":"1rem","margin":"2rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem"},"fontFamily":{"body-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-button":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-code":["JetBrains Mono"],"body-md":["Inter"],"label-badge":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"]},"fontSize":{"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"headline-md":["17px",{"lineHeight":"24px","fontWeight":"600"}],"label-button":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-lg":["22px",{"lineHeight":"30px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-code":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"fontWeight":"22px"}],"label-badge":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-lg-mobile":["19px",{"lineHeight":"26px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="#"><img alt="StackIt Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">Stack<span class="text-primary-container">It</span></span></a><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-primary font-semibold"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" data-path="question-detail" href="#">Questions</a><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-colors bg-surface-container text-primary font-semibold" data-path="user-profile" href="#">Profile</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" data-path="home" href="#">Tags</a></nav></div><div class="flex-1 max-w-xl mx-auto hidden sm:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-xl">search</span><input class="w-full pl-10 pr-16 py-space-xs bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search questions, snippets, topics..." type="text"/><span class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-code font-label-code shadow-sm">Ctrl+K</span></div></div><div class="flex items-center gap-space-sm shrink-0"><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary font-label-button text-label-button rounded-lg shadow-sm hover:bg-primary transition-colors focus:outline-none" data-path="ask-question" href="#"><span class="material-symbols-outlined text-lg">add</span><span class="hidden lg:inline">Ask Question</span></a><button aria-label="Notifications" class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors focus:outline-none" type="button"><span class="material-symbols-outlined text-2xl">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="hidden xl:flex flex-col items-end leading-none"><span class="inline-flex items-center text-label-badge font-label-badge text-tertiary-container bg-surface-container px-1.5 py-0.5 rounded font-semibold">+1,420</span></div><a class="flex items-center gap-space-xs p-0.5 rounded-full hover:ring-2 hover:ring-outline-variant focus:outline-none transition-all" data-path="user-profile" href="#"><img alt="User profile avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfHIzD4H6yiYGnBjY0RfBKN35mmKBwzKtwfqnMz0S7ZhG6BBm2Ndfs1hE-6-bJtZvUNBSuIe1q6gzsvhCDFVKRdSndU4ujOp3hQrDafRFwgmFfRq-Dpr9li3wCbpROrYEkiKR0gPe1VHfZU_dZlrOr2pizIjC8T2Tn3zP8iMYAHD84kV2I_6l2jHYexetE1Q2nc4gTHgF5v3OplAFeZFJit9gb1WPvjt7bI6gGd3IiC1gtcRrpfFA_"/><span class="material-symbols-outlined text-outline text-lg hidden sm:block">expand_more</span></a></div></div></div></header><main class="w-full pt-16 bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glow contained locally -->
+<div class="relative w-full overflow-hidden pb-space-xl">
+<div class="absolute -top-24 right-1/4 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 -left-20 w-80 h-80 bg-secondary-fixed/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Profile Hero Card -->
+<div class="mt-space-md w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-lg md:p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
+<!-- Left: Avatar & Bio Meta -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-lg">
+<div class="relative shrink-0">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden shadow-md bg-surface-container">
+<img alt="Alex Chen Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WeF_FmDs-SsolD435c2C3YNI293acQ74F-7i53hjhqAMjieoy34fBo7wdVrLQcfk2g0VgJDAxFFnFJEQyJMfLvsLen4H7Ur3yFCYH_YbWDiT381p2PHlBFbttvEF5CmUthpkAzMrJqNCPmAssKjo8bd_naX4waDo4OlFRg6dj0lK7lgIRrkAhWKw2aOvan_N91fEoNSmRRX9iVa2E7xbBt7OaTGiM9LC9h4lj6UDnYNJmTNCf1MzTLng"/>
+</div>
+<span class="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-tertiary-container text-on-tertiary text-sm shadow-sm" title="Active Contributor">
+<span class="material-symbols-outlined text-sm font-bold">verified</span>
+</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Alex Chen</h1>
+<span class="font-body-md text-body-md text-on-surface-variant font-label-code">@alexchen</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-primary text-label-badge font-label-badge">
+<span class="material-symbols-outlined text-xs">shield</span>
+                Senior Staff Engineer
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-0.5">
+              Full-stack engineer focusing on high-concurrency databases, PostgreSQL internals, and distributed systems. Passionate open-source contributor.
+            </p>
+<div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-outline">location_on</span>
+<span>San Francisco, CA</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-outline">calendar_month</span>
+<span>Member since March 2022</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary font-medium">
+<span class="material-symbols-outlined text-base">radio_button_checked</span>
+<span>Available for mentoring</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Action Buttons -->
+<div class="flex items-center gap-space-sm self-start md:self-center shrink-0">
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-button text-label-button shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+<span>Edit Profile</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors font-label-button text-label-button shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">share</span>
+<span>Share Profile</span>
+</button>
+</div>
+</div>
+<!-- Quick Stats Strip -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-md">
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mb-1">
+<span>Reputation Score</span>
+<span class="material-symbols-outlined text-primary-container text-lg">workspace_premium</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">12,450</span>
+<span class="font-label-badge text-label-badge text-primary font-semibold">Top 2%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">StackIt Community Rank #84</span>
+</div>
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mb-1">
+<span>Upvotes Received</span>
+<span class="material-symbols-outlined text-tertiary-container text-lg">thumb_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">4,820</span>
+<span class="inline-flex items-center text-label-badge font-label-badge text-tertiary font-semibold">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>+142
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Across all answers &amp; questions</span>
+</div>
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mb-1">
+<span>Answers Given</span>
+<span class="material-symbols-outlined text-secondary text-lg">forum</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">142</span>
+<span class="font-label-badge text-label-badge text-tertiary font-semibold">68 accepted</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">47.8% verified solution rate</span>
+</div>
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mb-1">
+<span>Questions Asked</span>
+<span class="material-symbols-outlined text-outline text-lg">help_outline</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">38</span>
+<span class="font-label-badge text-label-badge text-on-surface-variant font-semibold">34 resolved</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">89% resolution rate</span>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs Navigation -->
+<div class="mt-space-lg flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="tab-btn px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-primary font-label-button text-label-button shadow-sm font-semibold flex items-center gap-1.5 shrink-0" data-tab="activity" type="button">
+<span class="material-symbols-outlined text-base">bolt</span>
+        Activity &amp; Interactions
+      </button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-button text-label-button shrink-0 flex items-center gap-1.5" data-tab="questions" type="button">
+<span class="material-symbols-outlined text-base">help</span>
+        Questions (38)
+      </button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-button text-label-button shrink-0 flex items-center gap-1.5" data-tab="answers" type="button">
+<span class="material-symbols-outlined text-base">check_circle</span>
+        Answers (142)
+      </button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-button text-label-button shrink-0 flex items-center gap-1.5" data-tab="badges" type="button">
+<span class="material-symbols-outlined text-base">military_tech</span>
+        Badges &amp; Reputation
+      </button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-button text-label-button shrink-0 flex items-center gap-1.5" data-tab="bookmarks" type="button">
+<span class="material-symbols-outlined text-base">bookmark</span>
+        Bookmarks (24)
+      </button>
+</div>
+<!-- Main Content Layout (Split 8 / 4 on desktop) -->
+<div class="mt-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Primary Feed: Activity & Recent Contributions (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Filter Controls Bar -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-1 overflow-x-auto">
+<button class="feed-filter active px-space-sm py-1 rounded-md bg-primary-container text-on-primary font-label-badge text-label-badge" type="button">All Interactions</button>
+<button class="feed-filter px-space-sm py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-badge text-label-badge transition-colors" type="button">Upvoted</button>
+<button class="feed-filter px-space-sm py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-badge text-label-badge transition-colors" type="button">Answered</button>
+<button class="feed-filter px-space-sm py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-badge text-label-badge transition-colors" type="button">Asked</button>
+<button class="feed-filter px-space-sm py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-badge text-label-badge transition-colors" type="button">Comments</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm pr-2">
+<span class="material-symbols-outlined text-base">tune</span>
+<span class="hidden sm:inline">Sorted by recent</span>
+</div>
+</div>
+<!-- Activity Stream -->
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1: Answered with accepted checkmark -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface-container-high text-primary-container">
+<span class="material-symbols-outlined text-base">check_circle</span>
+</span>
+<span class="font-medium text-on-surface">Answered a question</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary font-label-badge text-label-badge flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span> Accepted Solution
+                </span>
+</div>
+<span class="text-outline font-label-code text-label-code">2 hours ago</span>
+</div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors font-semibold leading-snug" href="#">
+              How to join 2 columns in a data set to make a separate column in SQL
+            </a>
+<div class="bg-surface-container-low p-space-md rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<p class="line-clamp-2">
+                “You can achieve this in PostgreSQL and standard ANSI SQL using the concatenation operator <code class="bg-surface-container-highest px-1 py-0.5 rounded font-label-code text-label-code">||</code> or the <code class="bg-surface-container-highest px-1 py-0.5 rounded font-label-code text-label-code">CONCAT_WS()</code> function if you require null-safe joins...”
+              </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">sql</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">postgresql</span>
+</div>
+<div class="flex items-center gap-space-md text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-tertiary-container">
+<span class="material-symbols-outlined text-sm">thumb_up</span> +28 upvotes
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">chat_bubble_outline</span> 4 comments
+                </span>
+</div>
+</div>
+</article>
+<!-- Item 2: Received accepted answer & reputation -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface-container-high text-tertiary-container">
+<span class="material-symbols-outlined text-base">stars</span>
+</span>
+<span class="font-medium text-on-surface">Received accepted answer</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-badge text-label-badge font-semibold">
+                  +15 reputation
+                </span>
+</div>
+<span class="text-outline font-label-code text-label-code">Yesterday</span>
+</div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors font-semibold leading-snug" href="#">
+              Optimizing indexing for PostgreSQL JSONB nested structures with GIN indexes
+            </a>
+<div class="bg-surface-container-low p-space-md rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<p class="line-clamp-2">
+                “By constructing an expression index over <code class="bg-surface-container-highest px-1 py-0.5 rounded font-label-code text-label-code">((payload-&gt;'metadata')-&gt;&gt;'tenant_id')</code>, planner scan time dropped from 420ms to 1.8ms under 50k concurrent queries.”
+              </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">jsonb</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">indexing</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">postgresql</span>
+</div>
+<div class="flex items-center gap-space-md text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-sm">thumb_up</span> +54 upvotes
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bookmark</span> 19 saves
+                </span>
+</div>
+</div>
+</article>
+<!-- Item 3: Asked Question -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-base">help</span>
+</span>
+<span class="font-medium text-on-surface">Asked a question</span>
+</div>
+<span class="text-outline font-label-code text-label-code">3 days ago</span>
+</div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors font-semibold leading-snug" href="#">
+              React 19 Server Actions optimistic UI rollback states with concurrent updates
+            </a>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              When triggering nested mutations with useOptimistic, what is the cleanest paradigm to revert optimistic states when a streaming chunk fails halfway through network transit?
+            </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">react</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">nextjs</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">server-actions</span>
+</div>
+<div class="flex items-center gap-space-md text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 18 upvotes
+                </span>
+<span class="flex items-center gap-1 font-medium text-tertiary-container">
+<span class="material-symbols-outlined text-sm">question_answer</span> 3 answers
+                </span>
+</div>
+</div>
+</article>
+<!-- Item 4: Upvoted Answer -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface-container-high text-outline">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+</span>
+<span class="font-medium text-on-surface">Upvoted an answer by <a class="text-primary hover:underline font-label-code text-label-code" href="#">@david_m</a></span>
+</div>
+<span class="text-outline font-label-code text-label-code">5 days ago</span>
+</div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors font-semibold leading-snug" href="#">
+              Docker container OOMKilled troubleshooting &amp; kernel cgroup v2 memory limits
+            </a>
+<div class="bg-surface-container-low p-space-md rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<p class="line-clamp-2">
+                “Check <code class="bg-surface-container-highest px-1 py-0.5 rounded font-label-code text-label-code">/sys/fs/cgroup/memory.events</code> directly on the host to monitor oom_kill spikes without relying solely on Docker events daemon...”
+              </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">docker</span>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code">linux-kernel</span>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Original question had 42 upvotes</span>
+</div>
+</article>
+<!-- Item 5: Earned Badge -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-base">military_tech</span>
+</span>
+<span class="font-medium text-on-surface">Earned a Community Badge</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge font-semibold">
+                  Milestone Reached
+                </span>
+</div>
+<span class="text-outline font-label-code text-label-code">1 week ago</span>
+</div>
+<div class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-2xl">database</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Gold Database Authority</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-code text-[11px] font-semibold">GOLD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Awarded for achieving over 100+ accepted solutions in SQL and relational database topics.</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More Micro-action -->
+<div class="flex justify-center mt-space-sm">
+<button class="px-space-lg py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-button text-label-button transition-colors" type="button">
+            Load More Activity
+          </button>
+</div>
+</div>
+<!-- Right Column / Sidebar (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Top Tags Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-lg">label</span>
+              Top Tags Contributed
+            </h2>
+<span class="font-body-sm text-body-sm text-outline">18 Total</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- postgresql -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code font-semibold">postgresql</span>
+</div>
+<div class="flex items-center gap-3 text-right">
+<div>
+<span class="block font-headline-md text-body-md font-bold text-on-surface">840</span>
+<span class="block text-[11px] font-body-sm text-outline">upvotes</span>
+</div>
+<div class="w-12 text-right">
+<span class="block font-headline-md text-body-md font-bold text-on-surface-variant">42</span>
+<span class="block text-[11px] font-body-sm text-outline">answers</span>
+</div>
+</div>
+</div>
+<!-- sql -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code font-semibold">sql</span>
+</div>
+<div class="flex items-center gap-3 text-right">
+<div>
+<span class="block font-headline-md text-body-md font-bold text-on-surface">620</span>
+<span class="block text-[11px] font-body-sm text-outline">upvotes</span>
+</div>
+<div class="w-12 text-right">
+<span class="block font-headline-md text-body-md font-bold text-on-surface-variant">31</span>
+<span class="block text-[11px] font-body-sm text-outline">answers</span>
+</div>
+</div>
+</div>
+<!-- react -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code font-semibold">react</span>
+</div>
+<div class="flex items-center gap-3 text-right">
+<div>
+<span class="block font-headline-md text-body-md font-bold text-on-surface">390</span>
+<span class="block text-[11px] font-body-sm text-outline">upvotes</span>
+</div>
+<div class="w-12 text-right">
+<span class="block font-headline-md text-body-md font-bold text-on-surface-variant">18</span>
+<span class="block text-[11px] font-body-sm text-outline">answers</span>
+</div>
+</div>
+</div>
+<!-- docker -->
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-fixed/40 text-primary font-label-code text-label-code font-semibold">docker</span>
+</div>
+<div class="flex items-center gap-3 text-right">
+<div>
+<span class="block font-headline-md text-body-md font-bold text-on-surface">210</span>
+<span class="block text-[11px] font-body-sm text-outline">upvotes</span>
+</div>
+<div class="w-12 text-right">
+<span class="block font-headline-md text-body-md font-bold text-on-surface-variant">12</span>
+<span class="block text-[11px] font-body-sm text-outline">answers</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Sparkline Mini Chart (Inline SVG) -->
+<div class="mt-2 pt-space-sm bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface">30-Day Contribution Pulse</span>
+<span class="text-tertiary font-semibold">+24%</span>
+</div>
+<div class="w-full h-12 flex items-end">
+<svg class="w-full h-full text-primary-container" fill="none" preserveaspectratio="none" viewbox="0 0 200 40">
+<path d="M0,35 Q20,30 40,25 T80,15 T120,28 T160,8 T200,12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q20,30 40,25 T80,15 T120,28 T160,8 T200,12 L200,40 L0,40 Z" fill="currentColor" opacity="0.08"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Badges & Honors Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-lg">workspace_premium</span>
+              Badges &amp; Honors
+            </h2>
+<a class="font-label-button text-label-button text-primary hover:underline" href="#">View all (14)</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Gold Badge -->
+<div class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-container-high text-primary-container shrink-0 font-bold">
+<span class="material-symbols-outlined text-xl">workspace_premium</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-md font-bold text-on-surface">Solution Architect</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[10px] font-bold">GOLD</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">50+ accepted answers verified by author</span>
+</div>
+</div>
+<!-- Silver Badge -->
+<div class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-container-high text-secondary shrink-0 font-bold">
+<span class="material-symbols-outlined text-xl">diversity_3</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-md font-bold text-on-surface">Community Pillar</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[10px] font-bold">SILVER</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gathered over 1,000+ total upvotes</span>
+</div>
+</div>
+<!-- Bronze Badge -->
+<div class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-container-high text-outline shrink-0 font-bold">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-md font-bold text-on-surface">Curator</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-[10px] font-bold">BRONZE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">50+ peer-approved revisions and title edits</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Network Presence / Links Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-lg">link</span>
+            Network Presence
+          </h2>
+<div class="flex flex-col gap-space-xs">
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="https://github.com/alexchen-dev" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">terminal</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">GitHub</span>
+</div>
+<span class="font-label-code text-label-code text-outline group-hover:text-primary transition-colors">alexchen-dev</span>
+</a>
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="https://twitter.com/chen_codes" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">alternate_email</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Twitter / X</span>
+</div>
+<span class="font-label-code text-label-code text-outline group-hover:text-primary transition-colors">@chen_codes</span>
+</a>
+<a class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors group" href="https://alexchen.tech" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">language</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Personal Site</span>
+</div>
+<span class="font-label-code text-label-code text-outline group-hover:text-primary transition-colors">alexchen.tech</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tab switching state simulation
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          tab.classList.remove('text-on-surface-variant');
+        });
+      });
+
+      // Filter pills switching
+      const filters = document.querySelectorAll('.feed-filter');
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          filters.forEach(f => {
+            f.classList.remove('bg-primary-container', 'text-on-primary');
+            f.classList.add('text-on-surface-variant');
+          });
+          filter.classList.add('bg-primary-container', 'text-on-primary');
+          filter.classList.remove('text-on-surface-variant');
+        });
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="flex items-center gap-space-sm"><img alt="StackIt Logo" class="h-6 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/><span class="font-headline-md text-headline-md font-semibold text-on-surface">StackIt</span><span class="text-body-sm font-body-sm">© 2025 StackIt Community. High-velocity technical exchange.</span></div><div class="flex items-center gap-space-lg text-body-sm font-body-sm"><a class="hover:text-primary transition-colors" data-path="home" href="#">Guidelines</a><a class="hover:text-primary transition-colors" data-path="home" href="#">API</a><a class="hover:text-primary transition-colors" data-path="admin-dashboard" href="#">Moderation Ops</a><a class="hover:text-primary transition-colors" data-path="home" href="#">Privacy</a></div></div></div></footer></body></html>

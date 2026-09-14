@@ -58,7 +58,7 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
       ),
       votes (
         user_id,
-        value
+        vote_type
       )
     `)
     .eq('question_id', id)
@@ -95,8 +95,8 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
         
         <div className="space-y-6">
           {answers?.map((answer: any) => {
-            const score = answer.votes.reduce((acc: number, v: any) => acc + v.value, 0)
-            const userVote = user ? answer.votes.find((v: any) => v.user_id === user.id)?.value || 0 : 0
+            const score = answer.votes.reduce((acc: number, v: any) => acc + v.vote_type, 0)
+            const userVote = user ? answer.votes.find((v: any) => v.user_id === user.id)?.vote_type || 0 : 0
 
             return (
               <div key={answer.id} className={`flex gap-space-md p-space-lg rounded-lg border ${question.accepted_answer_id === answer.id ? 'border-tertiary bg-tertiary/5' : 'border-outline-variant bg-surface-container-low'}`}>
