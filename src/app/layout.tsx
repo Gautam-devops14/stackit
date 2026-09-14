@@ -1,6 +1,9 @@
 
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PromptDev - Q&A Forum",
@@ -27,11 +30,10 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
-      <body className={`min-h-screen bg-[var(--color-surface-container-lowest)] text-[var(--color-on-surface)] antialiased flex flex-col`}>
+      <body className={`${inter.className} min-h-screen bg-[var(--color-surface-container-lowest)] text-[var(--color-on-surface)] antialiased flex flex-col`}>
         {latestAnnouncement && (
           <div className="bg-[var(--color-tertiary)] text-[var(--color-on-tertiary)] px-4 py-2 text-center text-sm font-medium z-[60] relative">
             <strong>{latestAnnouncement.title}:</strong> {latestAnnouncement.content}
