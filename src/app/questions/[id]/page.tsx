@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { formatDistanceToNow } from 'date-fns'
@@ -40,7 +41,7 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
   }
 
   // Fetch answers with comments and votes
-  const { data: answers } = await supabase
+  let { data: answers, error: answersError } = await supabase
     .from('answers')
     .select(`
       id,
@@ -58,11 +59,34 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
       ),
       votes (
         user_id,
-        vote_type
+        value
       )
     `)
     .eq('question_id', id)
     .order('created_at', { ascending: true })
+
+  if (answersError) {
+    console.error("Answers query with comments failed:", answersError);
+    const fallback = await supabase
+      .from('answers')
+      .select(`
+        id,
+        content,
+        created_at,
+        profiles (
+          username,
+          avatar_url
+        ),
+        votes (
+          user_id,
+          value
+        )
+      `)
+      .eq('question_id', id)
+      .order('created_at', { ascending: true })
+    
+    answers = fallback.data;
+  }
 
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -73,7 +97,7 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
         <h1 className="text-3xl font-bold text-on-surface mb-2">{question.title}</h1>
         <div className="flex items-center gap-space-md text-sm text-on-surface-variant">
           <span>Asked {formatDistanceToNow(new Date(question.created_at))} ago</span>
-          <span>by <span className="font-medium text-primary">@{question.profiles?.username}</span></span>
+          <span>by <Link href={`/users/${question.profiles?.username}`} className="font-medium text-primary hover:underline">@{question.profiles?.username}</Link></span>
         </div>
       </div>
 
@@ -95,8 +119,8 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
         
         <div className="space-y-6">
           {answers?.map((answer: any) => {
-            const score = answer.votes.reduce((acc: number, v: any) => acc + v.vote_type, 0)
-            const userVote = user ? answer.votes.find((v: any) => v.user_id === user.id)?.vote_type || 0 : 0
+            const score = answer.votes.reduce((acc: number, v: any) => acc + v.value, 0)
+            const userVote = user ? answer.votes.find((v: any) => v.user_id === user.id)?.value || 0 : 0
 
             return (
               <div key={answer.id} className={`flex gap-space-md p-space-lg rounded-lg border ${question.accepted_answer_id === answer.id ? 'border-tertiary bg-tertiary/5' : 'border-outline-variant bg-surface-container-low'}`}>
@@ -114,7 +138,7 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-start mb-4">
                     <div className="text-sm text-on-surface-variant">
-                      Answered by <span className="font-medium text-primary">@{answer.profiles?.username}</span> {formatDistanceToNow(new Date(answer.created_at))} ago
+                      Answered by <Link href={`/users/${answer.profiles?.username}`} className="font-medium text-primary hover:underline">@{answer.profiles?.username}</Link> {formatDistanceToNow(new Date(answer.created_at))} ago
                     </div>
                     {question.accepted_answer_id === answer.id && (
                       <span className="px-2 py-1 bg-tertiary text-white text-xs font-bold rounded">
@@ -130,7 +154,7 @@ export default async function QuestionDetailPage({ params }: { params: Promise<{
                       <div key={comment.id} className="py-2 border-b border-outline-variant/50 last:border-0 text-sm">
                         <span className="text-on-surface">{comment.content}</span>
                         <span className="text-on-surface-variant ml-2">
-                          – <span className="text-primary">@{comment.profiles?.username}</span> {formatDistanceToNow(new Date(comment.created_at))} ago
+                          – <Link href={`/users/${comment.profiles?.username}`} className="text-primary hover:underline">@{comment.profiles?.username}</Link> {formatDistanceToNow(new Date(comment.created_at))} ago
                         </span>
                       </div>
                     ))}

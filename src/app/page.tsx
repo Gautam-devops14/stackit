@@ -103,7 +103,7 @@ export default async function Home() {
                     <div className="flex items-center gap-space-xs text-xs text-on-surface-variant shrink-0">
                       <span>asked {formatDistanceToNow(new Date(q.created_at))} ago</span>
                       <span>by</span>
-                      <span className="font-medium text-primary">@{q.profiles?.username}</span>
+                      <Link href={`/users/${q.profiles?.username}`} className="font-medium text-primary hover:underline">@{q.profiles?.username}</Link>
                     </div>
                   </div>
                 </div>

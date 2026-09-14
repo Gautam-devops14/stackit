@@ -30,12 +30,12 @@ export function AnswerForm({ questionId }: { questionId: string }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="bg-[var(--color-surface-container)] rounded-lg border border-[var(--color-outline-variant)]">
+      <div className="bg-surface-container rounded-lg border border-outline-variant">
         <RichTextEditor value={content} onChange={setContent} />
       </div>
 
       {error && (
-        <div className="p-3 bg-[var(--color-error)]/10 text-[var(--color-error)] rounded text-sm font-medium">
+        <div className="p-3 bg-error/10 text-error rounded text-sm font-medium">
           {error}
         </div>
       )}
@@ -44,7 +44,7 @@ export function AnswerForm({ questionId }: { questionId: string }) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-6 py-2 bg-[var(--color-primary)] text-white rounded-md font-medium hover:bg-[var(--color-primary-container)] transition-colors disabled:opacity-50"
+          className="px-6 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary-container transition-colors disabled:opacity-50"
         >
           {isSubmitting ? 'Posting...' : 'Post Your Answer'}
         </button>

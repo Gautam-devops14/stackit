@@ -76,13 +76,13 @@ export function TagAutocomplete({ selectedTags, onChange }: TagAutocompleteProps
         {selectedTags.map(tag => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 bg-[var(--color-surface-dim)] text-[var(--color-primary)] px-2 py-1 rounded text-sm font-medium"
+            className="inline-flex items-center gap-1 bg-surface-dim text-primary px-2 py-1 rounded text-sm font-medium"
           >
             {tag}
             <button
               type="button"
               onClick={() => handleRemoveTag(tag)}
-              className="text-[var(--color-primary)] hover:text-[var(--color-primary-container)]"
+              className="text-primary hover:text-primary-container"
             >
               <X size={14} />
             </button>
@@ -101,16 +101,16 @@ export function TagAutocomplete({ selectedTags, onChange }: TagAutocompleteProps
           onKeyDown={handleKeyDown}
           onFocus={() => setIsOpen(true)}
           placeholder="e.g. React, Nextjs (press Enter to add)"
-          className="w-full rounded-md border border-[var(--color-outline-variant)] bg-[var(--color-surface)] px-3 py-2 text-sm placeholder-[var(--color-on-surface-variant)] focus:border-[var(--color-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
+          className="w-full rounded-md border border-outline-variant bg-surface px-3 py-2 text-sm placeholder-on-surface-variant focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         />
         
         {isOpen && inputValue && (
-          <div className="absolute z-10 w-full mt-1 bg-[var(--color-surface-container)] border border-[var(--color-outline-variant)] rounded-md shadow-lg max-h-60 overflow-auto">
+          <div className="absolute z-10 w-full mt-1 bg-surface-container border border-outline-variant rounded-md shadow-lg max-h-60 overflow-auto">
             {suggestions.map(suggestion => (
               <button
                 key={suggestion.id}
                 type="button"
-                className="w-full text-left px-4 py-2 text-sm hover:bg-[var(--color-surface-dim)] text-[var(--color-on-surface)]"
+                className="w-full text-left px-4 py-2 text-sm hover:bg-surface-dim text-on-surface"
                 onClick={() => handleAddTag(suggestion.name)}
               >
                 {suggestion.name}
@@ -119,7 +119,7 @@ export function TagAutocomplete({ selectedTags, onChange }: TagAutocompleteProps
             {!suggestions.some(s => s.name.toLowerCase() === inputValue.toLowerCase()) && (
               <button
                 type="button"
-                className="w-full text-left px-4 py-2 text-sm hover:bg-[var(--color-surface-dim)] text-[var(--color-on-surface)]"
+                className="w-full text-left px-4 py-2 text-sm hover:bg-surface-dim text-on-surface"
                 onClick={() => handleAddTag(inputValue)}
               >
                 Create new tag: <span className="font-semibold">"{inputValue}"</span>

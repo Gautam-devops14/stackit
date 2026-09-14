@@ -72,22 +72,22 @@ export function NotificationBell() {
           setIsOpen(!isOpen)
           if (!isOpen) fetchNotifications() // refresh when opened
         }}
-        className="relative p-2 text-[var(--color-on-surface-variant)] hover:text-[var(--color-on-surface)] hover:bg-[var(--color-surface-container)] rounded-lg transition-colors"
+        className="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors"
       >
         <Bell size={20} />
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[var(--color-error)] ring-2 ring-[var(--color-surface)]" />
+          <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface" />
         )}
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 bg-[var(--color-surface-container)] border border-[var(--color-outline-variant)] rounded-lg shadow-lg overflow-hidden z-50">
-          <div className="p-3 border-b border-[var(--color-outline-variant)] font-semibold text-sm">
+        <div className="absolute right-0 mt-2 w-80 bg-surface-container border border-outline-variant rounded-lg shadow-lg overflow-hidden z-50">
+          <div className="p-3 border-b border-outline-variant font-semibold text-sm">
             Notifications ({unreadCount})
           </div>
           <div className="max-h-80 overflow-y-auto">
             {notifications.length === 0 ? (
-              <div className="p-4 text-center text-sm text-[var(--color-on-surface-variant)]">
+              <div className="p-4 text-center text-sm text-on-surface-variant">
                 No notifications yet
               </div>
             ) : (
@@ -96,9 +96,9 @@ export function NotificationBell() {
                   key={n.id}
                   href={`/questions/${n.question_id}`}
                   onClick={() => !n.read && markAsRead(n.id)}
-                  className={`block p-4 text-sm border-b border-[var(--color-outline-variant)] hover:bg-[var(--color-surface-dim)] transition-colors ${!n.read ? 'bg-[var(--color-surface-dim)]/50' : ''}`}
+                  className={`block p-4 text-sm border-b border-outline-variant hover:bg-surface-dim transition-colors ${!n.read ? 'bg-surface-dim/50' : ''}`}
                 >
-                  <p className={!n.read ? 'font-semibold text-[var(--color-primary)]' : 'text-[var(--color-on-surface)]'}>
+                  <p className={!n.read ? 'font-semibold text-primary' : 'text-on-surface'}>
                     {getMessage(n)}
                   </p>
                 </Link>

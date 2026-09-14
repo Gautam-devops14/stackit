@@ -105,13 +105,13 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
   }
 
   return (
-    <div className="rounded-lg border border-[var(--color-outline-variant)] bg-[var(--color-surface-container)]">
-      <div className="flex flex-wrap items-center gap-1 border-b border-[var(--color-outline-variant)] p-2">
+    <div className="rounded-lg border border-outline-variant bg-surface-container">
+      <div className="flex flex-wrap items-center gap-1 border-b border-outline-variant p-2">
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('bold') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('bold') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Bold"
         >
@@ -120,8 +120,8 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('italic') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('italic') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Italic"
         >
@@ -130,21 +130,21 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('strike') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('strike') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Strikethrough"
         >
           <Strikethrough size={18} />
         </button>
         
-        <div className="w-px h-6 bg-[var(--color-outline-variant)] mx-1" />
+        <div className="w-px h-6 bg-outline-variant mx-1" />
 
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('bulletList') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('bulletList') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Bullet List"
         >
@@ -153,21 +153,21 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('orderedList') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('orderedList') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Numbered List"
         >
           <ListOrdered size={18} />
         </button>
 
-        <div className="w-px h-6 bg-[var(--color-outline-variant)] mx-1" />
+        <div className="w-px h-6 bg-outline-variant mx-1" />
 
         <button
           type="button"
           onClick={() => editor.chain().focus().setTextAlign('left').run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive({ textAlign: 'left' }) ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive({ textAlign: 'left' }) ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Align Left"
         >
@@ -176,8 +176,8 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={() => editor.chain().focus().setTextAlign('center').run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive({ textAlign: 'center' }) ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive({ textAlign: 'center' }) ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Align Center"
         >
@@ -186,21 +186,21 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={() => editor.chain().focus().setTextAlign('right').run()}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive({ textAlign: 'right' }) ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive({ textAlign: 'right' }) ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Align Right"
         >
           <AlignRight size={18} />
         </button>
 
-        <div className="w-px h-6 bg-[var(--color-outline-variant)] mx-1" />
+        <div className="w-px h-6 bg-outline-variant mx-1" />
 
         <button
           type="button"
           onClick={setLink}
-          className={`p-2 rounded hover:bg-[var(--color-surface-dim)] ${
-            editor.isActive('link') ? 'bg-[var(--color-surface-dim)] text-[var(--color-primary)]' : ''
+          className={`p-2 rounded hover:bg-surface-dim ${
+            editor.isActive('link') ? 'bg-surface-dim text-primary' : ''
           }`}
           title="Add Link"
         >
@@ -209,14 +209,14 @@ export function RichTextEditor({ value, onChange }: RichTextEditorProps) {
         <button
           type="button"
           onClick={handleImageUpload}
-          className="p-2 rounded hover:bg-[var(--color-surface-dim)]"
+          className="p-2 rounded hover:bg-surface-dim"
           title="Upload Image"
         >
           <ImageIcon size={18} />
         </button>
       </div>
       
-      <div className="bg-[var(--color-surface)] rounded-b-lg">
+      <div className="bg-surface rounded-b-lg">
         <EditorContent editor={editor} />
       </div>
     </div>

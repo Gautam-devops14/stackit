@@ -103,7 +103,7 @@ export async function voteAnswer(answerId: string, value: number, questionId: st
   } else {
     // Upsert vote
     await supabase.from('votes').upsert(
-      { user_id: user.id, answer_id: answerId, vote_type: value },
+      { user_id: user.id, answer_id: answerId, value },
       { onConflict: 'user_id, answer_id' }
     )
   }

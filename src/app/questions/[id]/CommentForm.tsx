@@ -28,7 +28,7 @@ export function CommentForm({ answerId, questionId }: { answerId: string, questi
     return (
       <button 
         onClick={() => setIsOpen(true)}
-        className="text-xs text-[var(--color-primary)] hover:underline mt-2 inline-block"
+        className="text-xs text-primary hover:underline mt-2 inline-block"
       >
         Add a comment
       </button>
@@ -42,20 +42,20 @@ export function CommentForm({ answerId, questionId }: { answerId: string, questi
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Type your comment... use @username to mention"
-        className="flex-1 text-sm bg-[var(--color-surface)] border border-[var(--color-outline-variant)] rounded px-3 py-1.5 focus:border-[var(--color-primary)] focus:outline-none"
+        className="flex-1 text-sm bg-surface border border-outline-variant rounded px-3 py-1.5 focus:border-primary focus:outline-none"
         maxLength={500}
       />
       <button
         type="submit"
         disabled={isSubmitting || !content.trim()}
-        className="px-3 py-1.5 bg-[var(--color-primary)] text-white text-xs font-medium rounded hover:bg-[var(--color-primary-container)] disabled:opacity-50"
+        className="px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-container disabled:opacity-50"
       >
         Comment
       </button>
       <button
         type="button"
         onClick={() => setIsOpen(false)}
-        className="px-3 py-1.5 text-[var(--color-on-surface-variant)] text-xs font-medium hover:text-[var(--color-on-surface)]"
+        className="px-3 py-1.5 text-on-surface-variant text-xs font-medium hover:text-on-surface"
       >
         Cancel
       </button>

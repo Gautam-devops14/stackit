@@ -32,19 +32,19 @@ export function VoteButtons({ answerId, questionId, initialScore, userVote }: Vo
       <button
         onClick={() => handleVote(1)}
         disabled={isVoting}
-        className={`p-1 rounded hover:bg-[var(--color-surface-dim)] transition-colors ${userVote === 1 ? 'text-[var(--color-tertiary)]' : 'text-[var(--color-on-surface-variant)]'}`}
+        className={`p-1 rounded hover:bg-surface-dim transition-colors ${userVote === 1 ? 'text-tertiary' : 'text-on-surface-variant'}`}
       >
         <ArrowUp size={24} />
       </button>
       
-      <span className="font-semibold text-[var(--color-on-surface)] text-lg">
+      <span className="font-semibold text-on-surface text-lg">
         {initialScore}
       </span>
       
       <button
         onClick={() => handleVote(-1)}
         disabled={isVoting}
-        className={`p-1 rounded hover:bg-[var(--color-surface-dim)] transition-colors ${userVote === -1 ? 'text-[var(--color-error)]' : 'text-[var(--color-on-surface-variant)]'}`}
+        className={`p-1 rounded hover:bg-surface-dim transition-colors ${userVote === -1 ? 'text-error' : 'text-on-surface-variant'}`}
       >
         <ArrowDown size={24} />
       </button>
