@@ -29,25 +29,66 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.className} min-h-screen bg-[var(--color-surface-container-lowest)] text-[var(--color-on-surface)] antialiased flex flex-col`}>
+      <body className="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen">
         {latestAnnouncement && (
-          <div className="bg-[var(--color-tertiary)] text-[var(--color-on-tertiary)] px-4 py-2 text-center text-sm font-medium z-[60] relative">
+          <div className="bg-tertiary text-on-tertiary px-4 py-2 text-center text-sm font-medium z-[60] relative">
             <strong>{latestAnnouncement.title}:</strong> {latestAnnouncement.content}
           </div>
         )}
-        <header className="sticky top-0 left-0 right-0 w-full z-50 bg-[var(--color-surface)]/90 backdrop-blur-md border-b border-[var(--color-outline-variant)]/30"><div className="h-16 max-w-7xl mx-auto px-[var(--spacing-gutter-desktop)] flex items-center justify-between gap-[var(--spacing-space-md)]"><div className="flex items-center gap-[var(--spacing-space-lg)] shrink-0"><a className="flex items-center gap-[var(--spacing-space-sm)] group" data-path="questions" href="/"><span className="font-heading text-xl text-[var(--color-primary)] font-bold tracking-tight">StackIt</span></a></div><div className="flex-1 max-w-md mx-[var(--spacing-space-sm)] hidden sm:block"></div><div className="flex items-center gap-[var(--spacing-space-md)] shrink-0"><a className="inline-flex items-center gap-[var(--spacing-space-xs)] bg-[var(--color-primary)] text-white font-sans text-sm font-medium px-[var(--spacing-space-md)] py-[var(--spacing-space-xs)] rounded-lg hover:bg-[var(--color-primary-container)] transition-all shadow-sm" data-path="ask-question" href="/ask"><span className="material-symbols-outlined text-[18px]">add</span><span className="hidden sm:inline">Ask Question</span></a>
-        
-        <NotificationBell />
+        <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+          <div className="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+            <div className="flex items-center gap-space-lg shrink-0">
+              <a className="flex items-center gap-space-sm focus:outline-none" data-path="home" href="/">
+                <img alt="StackIt Logo" className="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/>
+                <span className="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">Stack<span className="text-primary-container">It</span></span>
+              </a>
+              <nav className="hidden md:flex items-center gap-space-xs">
+                <a className="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" href="/">Home</a>
+                <a className="px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-button text-label-button transition-colors hover:bg-surface-container hover:text-on-surface" href="/admin">Admin Ops</a>
+              </nav>
+            </div>
+            
+            <div className="flex-1 max-w-xl mx-auto hidden sm:block">
+              <div className="relative flex items-center">
+                <span className="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-xl">search</span>
+                <input className="w-full pl-10 pr-16 py-space-xs bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search questions..." type="text"/>
+              </div>
+            </div>
 
-        <a className="relative block rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" data-path="users" href="/login"><div className="w-8 h-8 rounded-full bg-[var(--color-surface-dim)] border border-[var(--color-outline-variant)]/50 flex items-center justify-center text-xs font-bold">U</div></a></div></div></header>
-        <main className="max-w-7xl mx-auto px-gutter-desktop pt-space-xl min-h-[80vh]">
+            <div className="flex items-center gap-space-sm shrink-0">
+              <a className="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary font-label-button text-label-button rounded-lg shadow-sm hover:bg-primary transition-colors focus:outline-none" href="/ask">
+                <span className="material-symbols-outlined text-lg">add</span><span className="hidden lg:inline">Ask Question</span>
+              </a>
+              
+              <NotificationBell />
+
+              <div className="flex items-center gap-space-xs pl-space-xs">
+                <a className="flex items-center gap-space-xs p-0.5 rounded-full hover:ring-2 hover:ring-outline-variant focus:outline-none transition-all" href="/login">
+                  <div className="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-xs font-bold text-on-surface">U</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="w-full pt-16 bg-background max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-[calc(100vh-4rem)]">
           {children}
         </main>
-        <footer className="w-full bg-surface-container-lowest border-t border-outline-variant/30 py-space-xl mt-space-xl"><div className="max-w-7xl mx-auto px-gutter-desktop flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm"><div className="flex items-center gap-space-md"><span className="text-on-surface font-headline-sm text-headline-sm font-semibold">PromptDev</span><span>© 2025 High-velocity knowledge exchange for developers.</span></div><div className="flex items-center gap-space-lg"><a className="hover:text-on-surface transition-colors" data-path="questions" href="#">Questions</a><a className="hover:text-on-surface transition-colors" data-path="tags" href="#">Tags</a><a className="hover:text-on-surface transition-colors" data-path="leaderboard" href="#">Leaderboard</a><span className="inline-flex items-center gap-1 text-secondary"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Systems Normal</span></div></div></footer>
+        
+        <footer className="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+          <div className="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
+              <div className="flex items-center gap-space-sm">
+                <img alt="StackIt Logo" className="h-6 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1WF_zyBdGmQ5ERcZq6u5EnkvlaUiFTlPF6i3sz9F9p7HiAIt6aI4zO7GK9lGtWFUt7A-QcJnfn6S31_FLV5Ng2r9V6-FOF0hqy0v8gWhZ5wDg6SpUS4CzNk3YAaBUKStYbjxDU5Uog_e8rAtyMU0D7xlt_PiCXD7nPpxqolGjHJLzZjfR8URk_hqI5N8fw56O4FN7tOvj8r3VTq-XYFBTPRnBSeIRdHLxB0JiCgQR2ciue7iXSa9TBh5ks"/>
+                <span className="font-headline-md text-headline-md font-semibold text-on-surface">StackIt</span>
+                <span className="text-body-sm font-body-sm">© 2026 StackIt Community.</span>
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

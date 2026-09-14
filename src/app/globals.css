@@ -1,62 +1,100 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #faf8ff;
   --color-surface-dim: #d2d9f4;
-  --color-surface-bright: #faf8ff;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f2f3ff;
-  --color-surface-container: #eaedff;
-  --color-surface-container-high: #e2e7ff;
-  --color-surface-container-highest: #dae2fd;
-  
-  --color-on-surface: #131b2e;
-  --color-on-surface-variant: #434655;
-  --color-outline: #737686;
   --color-outline-variant: #c3c6d7;
-
-  --color-primary: #2563eb;
+  --color-primary-container: #2563eb;
+  --color-error-container: #ffdad6;
+  --color-secondary-container: #645efb;
   --color-on-primary: #ffffff;
-  --color-primary-container: #004ac6;
-  --color-on-primary-container: #eeefff;
-
-  --color-secondary: #4f46e5;
-  --color-on-secondary: #ffffff;
-  
-  --color-tertiary: #10b981;
+  --color-on-surface: #131b2e;
+  --color-surface-variant: #dae2fd;
+  --color-primary: #004ac6;
   --color-on-tertiary: #ffffff;
-
+  --color-secondary-fixed: #e2dfff;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container-high: #e2e7ff;
+  --color-tertiary-container: #007d55;
+  --color-secondary: #4b41e1;
+  --color-outline: #737686;
+  --color-surface-bright: #faf8ff;
+  --color-on-primary-container: #eeefff;
+  --color-on-tertiary-fixed: #002113;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary-container: #bdffdb;
+  --color-on-secondary-container: #fffbff;
   --color-error: #ba1a1a;
-  
-  --color-background: #faf8ff;
+  --color-on-secondary-fixed: #0f0069;
+  --color-surface-container-low: #f2f3ff;
+  --color-on-secondary-fixed-variant: #3323cc;
+  --color-surface-container: #eaedff;
+  --color-secondary-fixed-dim: #c3c0ff;
   --color-on-background: #131b2e;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-error-container: #93000a;
+  --color-on-tertiary-fixed-variant: #005236;
+  --color-tertiary-fixed: #6ffbbe;
+  --color-on-surface-variant: #434655;
+  --color-background: #faf8ff;
+  --color-tertiary-fixed-dim: #4edea3;
+  --color-surface-container-highest: #dae2fd;
+  --color-inverse-primary: #b4c5ff;
+  --color-inverse-on-surface: #eef0ff;
+  --color-inverse-surface: #283044;
+  --color-primary-fixed: #dbe1ff;
+  --color-on-error: #ffffff;
+  --color-surface-tint: #0053db;
+  --color-tertiary: #006242;
+  --color-surface: #faf8ff;
+  --color-on-secondary: #ffffff;
 
   --font-sans: "Inter", sans-serif;
   --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --spacing-space-xs: 0.25rem;
+  /* Fonts */
+  --font-body-lg: "Inter";
+  --font-headline-xl-mobile: "Plus Jakarta Sans";
+  --font-headline-md: "Plus Jakarta Sans";
+  --font-label-button: "Plus Jakarta Sans";
+  --font-headline-lg: "Plus Jakarta Sans";
+  --font-body-sm: "Inter";
+  --font-label-code: "JetBrains Mono";
+  --font-body-md: "Inter";
+  --font-label-badge: "Inter";
+  --font-headline-lg-mobile: "Plus Jakarta Sans";
+  --font-headline-xl: "Plus Jakarta Sans";
+
+  --spacing-gutter: 1.5rem;
   --spacing-space-sm: 0.5rem;
   --spacing-space-md: 1rem;
-  --spacing-space-lg: 1.5rem;
-  --spacing-space-xl: 2.5rem;
-  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-margin: 2rem;
   --spacing-gutter-mobile: 0.75rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-xl: 2.5rem;
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
   --radius-full: 9999px;
 }
 
 @layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
   body {
+    overscroll-behavior: none;
     background-color: var(--color-background);
     color: var(--color-on-background);
-    font-family: var(--font-sans);
+    font-family: var(--font-body-md);
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-  }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+  ::-webkit-scrollbar { display: none; }
 }
+
